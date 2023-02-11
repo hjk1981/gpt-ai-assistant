@@ -96,11 +96,12 @@ GPT AI Assistant 是基於 OpenAI API 與 LINE Messaging API 實作的應用程�
 
 指令 | 別名 | 說明
 --- | --- | ---
-`請問` | `/talk` | 與 AI 助理對話。查看[其他別名](/locales/zh.js#L41)。
-`請畫` | `/draw` | 請 AI 助理生成圖像。查看[其他別名](/locales/zh.js#L34)。
-`繼續` | `/continue` | 請 AI 助理繼續回覆。查看[其他別名](/locales/zh.js#L28)。
-`開啟自動回覆` | `/activate` | 開啟 AI 自動回覆，須設置 `VERCEL_ACCESS_TOKEN` 環境變數。查看[其他別名](/locales/zh.js#L24)。
-`關閉自動回覆` | `/deactivate` | 關閉 AI 自動回覆，須設置 `VERCEL_ACCESS_TOKEN` 環境變數。查看[其他別名](/locales/zh.js#L30)。
+`請問` | `/talk` | 與 AI 助理對話。
+`請畫` | `/draw` | 請 AI 助理生成圖像。
+`繼續` | `/continue` | 請 AI 助理繼續回覆。
+`開啟自動回覆` | `/activate` | 開啟 AI 自動回覆，須設置 `VERCEL_ACCESS_TOKEN` 環境變數。
+`關閉自動回覆` | `/deactivate` | 關閉 AI 自動回覆，須設置 `VERCEL_ACCESS_TOKEN` 環境變數。
+`重試` | `/retry` | 重新發送對話。
 
 ### 系統指令
 
@@ -155,9 +156,11 @@ GPT AI Assistant 是基於 OpenAI API 與 LINE Messaging API 實作的應用程�
 `APP_MAX_GROUPS` | `1` | 群組數量上限，須搭配 `VERCEL_ACCESS_TOKEN` 環境變數。
 `APP_MAX_USERS` | `5` | 用戶數量上限，須搭配 `VERCEL_ACCESS_TOKEN` 環境變數。
 `BOT_NAME` | `AI` | AI 助理的名字，在關閉自動回覆時用來呼叫。
+`VERCEL_TIMEOUT` | 9000 | 呼叫 Vercel API 的超時時間。
 `VERCEL_PROJECT_NAME` | `gpt-ai-assistant` | Vercel 的專案名稱。當 Vercel 的專案名稱與 GitHub 的專案名稱不一樣時，可以使用此環境變數指定。
 `VERCEL_ACCESS_TOKEN` | `null` | Vercel 的 [access token](/demo/vercel-access-token.png)。
 `VERCEL_DEPLOY_HOOK_URL` | `null` | Vercel 的 [deploy hook URL](/demo/vercel-deploy-hook-url.png)。
+`OPENAI_TIMEOUT` | 9000 | 呼叫 OpenAI API 的超時時間。
 `OPENAI_API_KEY` | `null` | OpenAI 的 [API key](/demo/openai-api-key.png)。
 `OPENAI_COMPLETION_MODEL` | `text-davinci-003` | 詳見 [model](https://beta.openai.com/docs/api-reference/completions/create#completions/create-model) 參數說明。
 `OPENAI_COMPLETION_TEMPERATURE` | `0.9` | 詳見 [temperature](https://beta.openai.com/docs/api-reference/completions/create#completions/create-temperature) 參數說明。
@@ -165,6 +168,7 @@ GPT AI Assistant 是基於 OpenAI API 與 LINE Messaging API 實作的應用程�
 `OPENAI_COMPLETION_FREQUENCY_PENALTY` | `0` | 詳見 [frequency_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-frequency_penalty) 參數說明。
 `OPENAI_COMPLETION_PRESENCE_PENALTY` | `0.6` | 詳見 [presence_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-presence_penalty) 參數說明。
 `OPENAI_IMAGE_GENERATION_SIZE` | `256x256` | 詳見 [size](https://beta.openai.com/docs/api-reference/images/create#images/create-size) 參數說明。
+`LINE_TIMEOUT` | 9000 | 呼叫 LINE Messaging API 的超時時間。
 `LINE_CHANNEL_ACCESS_TOKEN` | `null` | LINE 的 [channel access token](/demo/line-channel-access-token.png)。
 `LINE_CHANNEL_SECRET` | `null` | LINE 的 [channel secret](/demo/line-channel-secret.png)。
 
@@ -359,7 +363,8 @@ docker-compose up -d
 ## 相關專案
 
 - [line-bot-node](https://github.com/memochou1993/line-bot-node)
-- [openai-cli-node](https://github.com/memochou1993/openai-cli-node)
+- [gpt-cli-node](https://github.com/memochou1993/gpt-cli-node)
+- [gpt-cli-rust](https://github.com/memochou1993/gpt-cli-rust)
 
 ## 授權條款
 
