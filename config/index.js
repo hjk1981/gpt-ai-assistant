@@ -14,7 +14,7 @@ const config = Object.freeze({
   APP_LANG: env.APP_LANG || 'zh',
   APP_WEBHOOK_PATH: env.APP_WEBHOOK_PATH || '/webhook',
   APP_MAX_GROUPS: Number(env.APP_MAX_GROUPS) || 2,
-  APP_MAX_USERS: Number(env.APP_MAX_USERS) || 5,
+  APP_MAX_USERS: Number(env.APP_MAX_USERS) || 10,
   BOT_NAME: env.BOT_NAME || 'AI',
   VERCEL_ENV: env.VERCEL_ENV || null,
   VERCEL_PROJECT_NAME: env.VERCEL_PROJECT_NAME || env.VERCEL_GIT_REPO_SLUG || null,
